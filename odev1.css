@@ -1,0 +1,74 @@
+p {
+  margin: 0;
+}
+
+h1,
+h2,
+p,
+input[type="submit"] {
+  margin-left: 10px;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+  color: #e6e6e6;
+  background-color: #383838;
+  width: 300px;
+  padding: 15px 30px;
+  text-align: center;
+  transition: all 0.3s ease-in-out;
+}
+a:hover {
+  transform: translateX(5px);
+}
+
+table {
+  min-width: 400px;
+  max-width: 600px;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+tr,
+td,
+th {
+  border: 1px solid black;
+  padding: 5px;
+  background-color: #feffe0;
+}
+
+tr td:last-child {
+  background-color: #f8f9fa;
+}
+
+.formItem {
+  margin-top: 10px;
+  margin-left: 10px;
+}
+.formItem:last-child {
+  margin-bottom: 30px;
+}
+.formItem label {
+  display: block;
+}
+.rangeWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.tableTitle {
+  width: 200px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.tamamlaDiv {
+  min-width: 400px;
+  max-width: 600px;
+  width: 80%;
+  margin: 10px auto;
+}

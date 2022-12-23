@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Odev2</title>
+    <style>
+      a {
+        display: inline-block;
+        text-decoration: none;
+        color: #e6e6e6;
+        background-color: #383838;
+        width: 300px;
+        padding: 15px 30px;
+        text-align: center;
+        transition: all 0.3s ease-in-out;
+      }
+      a:hover {
+        transform: translateX(5px);
+      }
+    </style>
+  </head>
+  <body>
+    <label for="min">Minimum Değer:</label>
+    <div style="display: flex; align-items: center; gap: 10px">
+      <input type="range" id="min" name="min" />
+      <button id="minBtn">Seç</button>
+      <input type="text" disabled id="minResult" />
+    </div>
+    <label for="max">Maksimum Değer:</label>
+    <div style="display: flex; align-items: center; gap: 10px">
+      <input type="range" id="max" name="max" />
+      <button id="maxBtn">Seç</button>
+      <input type="text" id="maxResult" disabled />
+    </div>
+    <br />
+    <button id="hesapla">Uret</button>
+    <hr />
+    <p>Rastgele Sayı: <span id="result"></span></p>
+
+    <script>
+      const min = document.querySelector("#min");
+      const max = document.querySelector("#max");
+      const minBtn = document.querySelector("#minBtn");
+      const maxBtn = document.querySelector("#maxBtn");
+      const hesapla = document.querySelector("#hesapla");
+      const result = document.querySelector("#result");
+      const minInput = document.querySelector("#minResult");
+      const maxInput = document.querySelector("#maxResult");
+
+      minBtn.addEventListener("click", () => {
+        minInput.value = min.value;
+      });
+
+      maxBtn.addEventListener("click", () => {
+        maxInput.value = max.value;
+      });
+
+      hesapla.addEventListener("click", () => {
+        const res = Math.floor(
+          Math.random() * (maxInput.value - minInput.value + 1) +
+            Number(minInput.value)
+        );
+
+        if (min.value > max.value) {
+          return alert("min değeri max değerinden büyük olamaz!");
+        } else {
+          result.innerHTML = res;
+        }
+      });
+    </script>
+  </body>
+</html>

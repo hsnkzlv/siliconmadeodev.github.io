@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ödev 1</title>
+    <link rel="stylesheet" href="./odev1.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Kişiye Özel Sipariş Aracı</h1>
+      <hr />
+      <p>
+        Lütfen oluşturmak istediğiniz siparişe ilişkin aşağıdaki bilgileri
+        doldurunuz;
+      </p>
+    </header>
+
+    <main>
+      <h2>Kişisel Bilgiler</h2>
+      <form id="kisiselBilgiler" class="kisiselBilgiler">
+        <div class="formItem">
+          <label for="name">Adınız :</label>
+          <input type="text" name="name" id="name" />
+        </div>
+        <div class="formItem">
+          <label for="surname">Soyadınız :</label>
+          <input type="text" name="surname" id="surname" />
+        </div>
+        <div class="formItem">
+          <label for="bornDate">Doğum Tarihiniz :</label>
+          <input type="date" name="bornDate" id="bornDate" />
+        </div>
+        <div class="formItem">
+          <label for="email">Mail Adresiniz :</label>
+          <input type="email" name="email" id="email" />
+        </div>
+        <div class="formItem">
+          <label for="tel">Telefon :</label>
+          <input type="tel" name="tel" id="tel" placeholder="5XX-XXX-XXXX" />
+        </div>
+        <hr />
+
+        <h2>Sipariş Bilgileri</h2>
+
+        <div class="formItem">
+          <label for="tshirtColor">Tişört Rengi :</label>
+          <input type="color" name="tshirtColor" id="tshirtColor" />
+        </div>
+        <div class="formItem">
+          <label for="tshirtTextColor">Yazı Rengi :</label>
+          <input type="color" name="tshirtTextColor" id="tshirtTextColor" />
+        </div>
+        <div class="formItem">
+          <label for="tshirtText">Tişört üzerinde yazacak yazıyı girin :</label>
+          <input type="text" name="tshirtText" id="tshirtText" />
+        </div>
+        <div class="formItem">
+          <label for="tshirtAdet">Tişört Adeti :</label>
+          <input type="text" name="tshirtAdet" id="tshirtAdet" />
+        </div>
+        <div class="formItem">
+          <label for="beden">Tişört Adeti :</label>
+          <input
+            type="range"
+            name="beden"
+            id="beden"
+            class="slider"
+            min="1"
+            max="6"
+            value="2"
+            list="bedenList"
+          />
+          <datalist id="bedenList">
+            <option value="1"></option>
+            <option value="2"></option>
+            <option value="3"></option>
+            <option value="4"></option>
+            <option value="5"></option>
+            <option value="6"></option>
+          </datalist>
+        </div>
+        <div class="formItem">
+          <button id="bedenButton" type="button">Seç</button>
+          <input type="text" name="size" id="sizeInput" disabled />
+        </div>
+
+        <hr />
+
+        <h2>Teslimat Bilgileri</h2>
+
+        <div class="formItem">
+          <label for="address">Adres :</label>
+          <input type="text" name="address" id="address" />
+        </div>
+        <div class="formItem">
+          <label for="deliverDate"
+            >Teslim tarihi için bir aralık seçiniz :</label
+          >
+          <input type="week" name="deliverDate" id="deliverDate" />
+        </div>
+
+        <hr />
+
+        <h2>Ödeme Bilgileri</h2>
+
+        <div class="formItem">
+          <label for="cardName">Ad Soyad</label>
+          <input type="text" name="cardName" id="cardName" />
+        </div>
+        <div class="formItem">
+          <label for="cardNo">Kart Numarası:</label>
+          <input
+            type="text"
+            name="cardNo"
+            id="cardNo"
+            placeholder="XXXX-XXXX-XXXX-XXXX"
+          />
+        </div>
+        <div class="formItem">
+          <label for="cardDate">Son Kullanma Tarihi:</label>
+          <input type="month" name="cardDate" id="cardDate" />
+        </div>
+        <div class="formItem">
+          <label for="cardCvv">CVV:</label>
+          <input type="text" name="cardCvv" id="cardCvv" />
+        </div>
+        <br />
+
+        <input type="submit" value="Onayla" id="onayla" />
+      </form>
+
+      <hr />
+      <section id="table">
+        <table>
+          <tr>
+            <th colspan="3" align="center">SİPARİŞ ONAY</th>
+          </tr>
+          <!-- KİŞİSEL BİLGİLER -->
+          <tr>
+            <td rowspan="5" align="center" class="tableTitle">
+              <p>Kişisel Bilgiler</p>
+            </td>
+            <td width="200">
+              <p>Ad:</p>
+            </td>
+            <td>
+              <p id="nameTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="200">
+              <p>Soyad:</p>
+            </td>
+            <td>
+              <p id="surnameTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="200">
+              <p>Doğum Tarihi:</p>
+            </td>
+            <td>
+              <p id="birthDateTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="200">
+              <p>Mail Adresi :</p>
+            </td>
+            <td>
+              <p id="mailTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="200">
+              <p>Telefon:</p>
+            </td>
+            <td>
+              <p id="phoneTable">--</p>
+            </td>
+          </tr>
+          <!-- Sipariş bilgileri -->
+          <!-- KİŞİSEL BİLGİLER -->
+          <tr>
+            <td rowspan="5" align="center" class="tableTitle">
+              <p>Sipariş Bilgileri</p>
+            </td>
+            <td width="200">
+              <p>Tişört Rengi:</p>
+            </td>
+            <td>
+              <p id="tshirtColorTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="200">
+              <p>Yazı Rengi:</p>
+            </td>
+            <td>
+              <p id="tshirtTextColorTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="200">
+              <p>Yazı :</p>
+            </td>
+            <td>
+              <p id="tshirtTextTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="200">
+              <p>Tişört Adeti:</p>
+            </td>
+            <td>
+              <p id="tshirtAdetTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td width="200">
+              <p>Tişört Bedeni:</p>
+            </td>
+            <td>
+              <p id="tshirtBedenTable">--</p>
+            </td>
+          </tr>
+          <!-- Teslimat Bilgileri -->
+          <tr>
+            <td rowspan="2" align="center" class="tableTitle">
+              <p>Teslimat Bilgileri</p>
+            </td>
+            <td>
+              <p>Adres:</p>
+            </td>
+            <td>
+              <p id="adresTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Teslim Tarihi</p>
+            </td>
+            <td>
+              <p id="teslimTarihTable">--</p>
+            </td>
+          </tr>
+          <!-- Ödeme Bilgileri -->
+          <tr>
+            <td rowspan="4" align="center" class="tableTitle">
+              <p>Ödeme Bilgileri</p>
+            </td>
+            <td>
+              <p>Ad Soyad:</p>
+            </td>
+            <td>
+              <p id="cardNameTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Kart Numarasi:</p>
+            </td>
+            <td>
+              <p id="kartNumarasiTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Son Kullanma Tarihi:</p>
+            </td>
+            <td>
+              <p id="sonKullanmaTarihTable">--</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>CVV:</p>
+            </td>
+            <td>
+              <p id="cvvTable">--</p>
+            </td>
+          </tr>
+        </table>
+      </section>
+      <div class="tamamlaDiv">
+        <button id="tamamlaBtn" disabled>Tamamla</button>
+      </div>
+    </main>
+
+    <script src="./odev1.js"></script>
+  </body>
+</html>
